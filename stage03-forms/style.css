@@ -1,0 +1,184 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+fieldset {
+  border: none;
+}
+
+/* Fonts Styling */
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+}
+
+h1,
+legend,
+h2,
+button {
+  font-family: "Staatliches", sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+input {
+  font-size: 1rem;
+}
+
+header p,
+h2,
+button {
+  font-size: 1.25rem;
+}
+
+legend {
+  font-size: 1.5rem;
+}
+
+label span {
+  font-size: 0.75rem;
+}
+
+/* Body style */
+body {
+  background: #e5e5e5;
+  color: #ffffff;
+}
+
+body::before {
+  content: "";
+
+  background: #535971;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  min-height: 27.25rem;
+  width: 100%;
+}
+
+/* Container */
+.container {
+  max-width: 46.875rem;
+  margin: 8.75rem auto;
+}
+
+/* Header style */
+header {
+  max-width: 22.75rem;
+}
+
+h1 {
+  margin-bottom: 1.125rem;
+}
+
+/* Form style */
+#mentorship-form {
+  background: #ffffff;
+  border-radius: 20px 20px 0px 0px;
+  color: #535971;
+
+  padding: 4rem;
+  margin-top: 3.125rem;
+}
+
+#mentorship-form fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  margin-bottom: 2rem;
+}
+
+#mentorship-form legend {
+  border-bottom: 1px solid #e6e6f0;
+
+  display: block;
+  margin-bottom: 2.25rem;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+#mentorship-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+#mentorship-form label span {
+  color: #c1bccc;
+}
+
+#mentorship-form label span:hover {
+  color: #535971;
+}
+
+#mentorship-form input {
+  background: #fafafc;
+  border: 1px solid #e6e6f0;
+  border-radius: 0.5rem;
+
+  min-height: 3.5rem;
+  padding: 0 0.75rem;
+  width: 100%;
+}
+
+#mentorship-form input:focus {
+  border: 2px solid #535971;
+  outline: none;
+}
+
+#mentorship-form .name-inputs {
+  display: flex;
+  gap: 1.375rem;
+}
+
+#mentorship-form .name-inputs .input-wrapper {
+  flex: 1;
+}
+
+#mentorship-form .schedule {
+  display: flex;
+  flex-direction: row;
+  gap: 0.625rem;
+}
+
+#mentorship-form .schedule .input-wrapper {
+  min-width: 8.75rem;
+  margin-block: 1rem;
+}
+
+#mentorship-form .schedule .input-wrapper.calendar {
+  min-width: 18.75rem;
+  margin-right: 1.375rem;
+}
+
+/* Footer Style */
+footer {
+  background: #535971;
+  padding: 3.25rem 4.4375rem;
+  border-radius: 0 0 20px 20px;
+  margin-top: -3rem;
+}
+
+footer button {
+  background-color: #ff5374;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  line-height: 26px;
+
+  min-width: 38rem;
+  padding-block: 0.9375rem;
+}
+
+footer button:hover {
+  background-color: #c23652;
+}
