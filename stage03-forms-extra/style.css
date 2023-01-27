@@ -1,0 +1,255 @@
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  border: none;
+}
+
+/* Fonts styling */
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+}
+
+h1,
+legend,
+button {
+  font-family: "Staatliches", sans-serif;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+legend {
+  font-size: 1.5rem;
+}
+
+button {
+  font-size: 1.25rem;
+}
+
+header p {
+  font-size: 1.25rem;
+}
+
+input,
+select,
+textarea {
+  font-size: 0.875rem;
+}
+
+/* Body */
+body {
+  background: #bfd7e4;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  background: #293241;
+  min-height: 29.0625rem;
+  width: 100%;
+}
+
+/* Container */
+.container {
+  max-width: 46.875rem;
+  margin: 6.6875rem auto;
+}
+
+/* Header  */
+header {
+  color: #ffffff;
+  text-align: center;
+}
+
+header img {
+  margin-top: 0.9375rem;
+  margin-bottom: 2rem;
+}
+
+/* Form */
+#review-form {
+  background: #ffffff;
+  border-radius: 1.25rem;
+  color: #4e4958;
+}
+
+#review-form fieldset {
+  margin: 0 4rem 2rem;
+}
+
+legend {
+  border-bottom: 1px solid #e6e6f0;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+/* Form Header */
+#review-form #user-info {
+  margin: 0 0 4rem;
+}
+
+#user-info > div {
+  margin: 0 4rem;
+}
+
+#user-info legend {
+  color: #ffffff;
+  padding: 3.125rem 0;
+  text-align: center;
+  width: 100%;
+  background-color: #f67669;
+  border-radius: 20px 20px 0 0;
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+  background: #fafafc;
+  border: 1px solid #e6e6f0;
+  border-radius: 0.5rem;
+  color: #4e4958;
+  min-height: 3.4706rem;
+  padding: 0 1rem;
+}
+
+select {
+  margin-bottom: 2rem;
+}
+
+textarea {
+  padding: 1rem;
+  max-width: 38rem;
+  min-height: 10.4375rem;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#user-info .user-names {
+    margin-bottom: 1rem;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  margin-top: 1.875rem;
+}
+
+.checkbox-wrapper input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+
+  opacity: 0;
+}
+
+.checkbox-wrapper label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox-wrapper label::before {
+  content: "";
+  display: block;
+
+  margin-right: 0.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+
+  background: #fafafc;
+  border: 1px solid #e6e6f0;
+  border-radius: 0.5rem;
+}
+
+.checkbox-wrapper input:checked + label::before {
+  border: 1px solid #4e4958;
+  content: "✔";
+  text-align: center;
+  font-size: 1rem;
+}
+
+.checkbox-wrapper input:focus + label::before {
+  outline: 2px solid #4e4958;
+}
+
+/* Form - General Styling */
+label span {
+  color: #c1bccc;
+  font-size: 0.75rem;
+}
+
+label span:hover {
+  color: #4e4958;
+}
+
+.user-names {
+  display: flex;
+  gap: 1.375rem;
+  margin-bottom: 1rem;
+}
+
+.user-names div {
+  flex-basis: 18.75rem;
+}
+
+#mentor-info select {
+  max-width: 18.75rem;
+}
+
+.dates-wrapper {
+  display: flex;
+  margin-bottom: 4rem;
+}
+
+#class-date {
+  min-width: 18.75rem;
+  margin-right: 2rem;
+}
+
+#class-start-time,
+#class-end-time {
+  min-width: 8.75rem;
+}
+
+#class-start-time {
+  margin-right: 0.625rem;
+}
+
+#review-form button {
+  background-color: #f67669;
+  border: none;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  padding-block: 14px;
+
+  cursor: pointer;
+
+  margin: 0 4rem 4rem;
+  min-width: 38.875rem;
+}
+
+#review-form button:hover {
+  background-color: #a34e45;
+}
