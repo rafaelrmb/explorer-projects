@@ -1,0 +1,143 @@
+/* Variables */
+:root {
+  --ff-titles: "Staatliches", sans-serif;
+  --ff-text: "Palanquin", sans-serif;
+
+  --fs-100: 0.875rem;
+  --fs-200: 1.25rem;
+  --fs-300: 2.5rem;
+
+  --text-blue: 274 84% 12%;
+  --text-grey-blue: 232 17% 35%;
+
+  --dark-bg: 218 17% 62%;
+  --light-bg: 275 18% 79%;
+  --lighter-bg: 233 100% 97%;
+  --lightest-bg: 312 91% 96%;
+  --white: 0 0% 100%;
+}
+
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container styling */
+.container {
+  padding: 2rem;
+}
+
+/* Body styling */
+body {
+  text-align: center;
+  color: hsl(var(--text-blue));
+  background: hsl(var(--lighter-bg));
+}
+
+/* Font styling */
+body {
+  font-family: var(--ff-text);
+  font-size: var(--fs-100);
+}
+
+.brand-container,
+.card-title {
+  font-family: var(--ff-titles);
+  line-height: 2.125rem;
+  letter-spacing: 0.1rem;
+}
+
+.brand-container span {
+  font-size: var(--fs-300);
+}
+
+.card-title {
+  font-size: var(--fs-200);
+}
+
+/* Header styling */
+.brand-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: hsl(var(--dark-bg));
+}
+
+.brand-container img {
+  max-width: 8.5625rem;
+  margin: 2rem 0;
+}
+
+.brand-container span {
+  background: hsl(var(--light-bg));
+  color: hsl(var(--white));
+  padding: 0.5rem;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1.875rem;
+  width: 100%;
+}
+
+header p {
+  margin: 2rem;
+  line-height: 1.2rem;
+}
+
+/* Gallery styling */
+.gallery {
+  display: grid;
+  gap: 2rem;
+}
+
+.card {
+  position: relative;
+}
+
+.card:nth-child(odd) {
+  animation: rightleft 700ms;
+}
+
+.card:nth-child(even) {
+  animation: leftright 700ms;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card .card-title {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+
+  background: hsl(var(--lightest-bg));
+  color: hsl(var(--text-grey-blue));
+
+  border-radius: 1.25rem;
+  padding: 0 1.5rem;
+}
+
+/* Animations */
+@keyframes rightleft {
+  0% {
+    opacity: 0;
+    transform: translateX(11rem);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes leftright {
+  0% {
+    opacity: 0;
+    transform: translateX(-11rem);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
