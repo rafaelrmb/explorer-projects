@@ -1,11 +1,12 @@
 /* Variables */
 :root {
   --ff-titles: "Staatliches", sans-serif;
-  --ff-text: "Palanquin", sans-serif;
+  --ff-text: "Roboto", sans-serif;
 
-  --fs-100: 0.875rem;
+  --fs-100: clamp(0.875rem, 2.5vw, 1.2rem);
+  --fs-footer: 0.875rem;
   --fs-200: 1.25rem;
-  --fs-300: 2.5rem;
+  --fs-300: clamp(2.5rem, 6vw, 3rem);
 
   --text-blue: 274 84% 12%;
   --text-grey-blue: 232 17% 35%;
@@ -22,6 +23,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  opacity: 0.5;
 }
 
 /* Container styling */
@@ -57,6 +68,10 @@ body {
   font-size: var(--fs-200);
 }
 
+footer {
+  font-size: var(--fs-footer);
+}
+
 /* Header styling */
 .brand-container {
   display: flex;
@@ -82,7 +97,6 @@ body {
 
 header p {
   margin: 2rem;
-  line-height: 1.2rem;
 }
 
 /* Gallery styling */
@@ -103,6 +117,11 @@ header p {
   animation: leftright 700ms;
 }
 
+.card:nth-child(5),
+.card:nth-child(6) {
+  display: none;
+}
+
 .card img {
   width: 100%;
 }
@@ -117,6 +136,93 @@ header p {
 
   border-radius: 1.25rem;
   padding: 0 1.5rem;
+}
+
+/* Media Queries */
+@media (min-width: 31.25em) {
+  .gallery {
+    grid-template-areas:
+      "big-img-l big-img-r"
+      "small-img-l small-img-r";
+
+    margin-bottom: 3.125rem;
+  }
+
+  .card:nth-child(1) {
+    grid-area: small-img-l;
+  }
+
+  .card:nth-child(2) {
+    grid-area: big-img-l;
+  }
+
+  .card:nth-child(3) {
+    grid-area: small-img-r;
+  }
+
+  .card:nth-child(4) {
+    grid-area: big-img-r;
+  }
+}
+
+@media (min-width: 56.25em) {
+  body {
+    display: grid;
+    grid-template-columns: minmax(15.625rem, 30%) 1fr;
+
+    height: 100vh;
+  }
+
+  header {
+    max-width: 23.5625rem;
+    background: hsl(var(--dark-bg));
+    color: hsl(var(--white));
+  }
+
+  .container {
+    padding: 4rem 5rem 3.125rem;
+
+    align-self: center;
+  }
+
+  .gallery {
+    grid-template-areas:
+      "sm-img-l big-img-mid sm-img-r"
+      "big-img-l big-img-mid big-img-r"
+      "big-img-l sm-img-mid big-img-r";
+  }
+
+  .card:nth-child(1) {
+    grid-area: sm-img-l;
+  }
+
+  .card:nth-child(2) {
+    grid-area: big-img-mid;
+  }
+
+  .card:nth-child(3) {
+    grid-area: sm-img-mid;
+  }
+
+  .card:nth-child(4) {
+    grid-area: big-img-r;
+  }
+
+  .card:nth-child(5) {
+    grid-area: sm-img-r;
+  }
+  .card:nth-child(6) {
+    grid-area: big-img-l;
+  }
+
+  .card:nth-child(5),
+  .card:nth-child(6) {
+    display: block;
+  }
+
+  .card-title {
+    display: none;
+  }
 }
 
 /* Animations */
