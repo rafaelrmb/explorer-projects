@@ -1,0 +1,131 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  display: grid;
+  place-content: center;
+
+  background: linear-gradient(45deg, #190361 0%, #bb00ff 100%);
+  background-size: 200% 200%;
+  height: 100vh;
+
+  animation: gradient 10s ease infinite;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+}
+
+p,
+button {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9375rem;
+}
+
+button {
+  font-weight: 700;
+}
+
+#todays-luck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #fff;
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.8);
+  border-radius: 0.3125rem;
+
+  padding: 3rem 4rem 4rem;
+}
+
+#todays-luck h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  max-width: 16.25rem;
+  text-align: center;
+}
+
+#todays-luck img {
+  margin-top: 1.25rem;
+}
+
+#todays-luck img.closed {
+  cursor: pointer;
+}
+
+#todays-luck img.closed:hover {
+  animation: shake 0.06s ease-in-out infinite alternate-reverse;
+}
+
+.open-button {
+  background: #ff9500;
+  color: #fff;
+  cursor: pointer;
+
+  border: none;
+  border-radius: 0.25rem;
+
+  padding: 1rem;
+  margin-top: 3.75rem;
+
+  transition: background 0.3s ease-in-out;
+}
+
+.open-button:hover {
+  background: #d38313;
+}
+
+#luck-container {
+  background: #e4edf1;
+  box-shadow: 2px 2px 2px rgba(85, 85, 85, 0.5);
+  padding: 0.625rem;
+  max-width: 18.2rem;
+  margin-bottom: 1rem;
+
+  font-family: "Dancing Script", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+
+  animation: down-up 1.2s ease-in-out;
+}
+
+@keyframes down-up {
+  from {
+    transform: translateY(150px) scale(0.2);
+    opacity: .2;
+  }
+
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  from {
+    transform: rotate(0.006turn);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes gradient {
+0% {
+  background-position: 0% 50%;
+}
+50% {
+  background-position: 100% 50%;
+}
+100% {
+  background-position: 0% 50%;
+}
+}
