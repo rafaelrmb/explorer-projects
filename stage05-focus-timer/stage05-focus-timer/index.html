@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="./script.js" defer></script>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:500"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Focus Timer</title>
+  </head>
+  <body>
+    <main>
+      <div class="timer-container">
+        <p>Clique no tempo para escolher a quantidade de minutos</p>
+        <div class="timer-display">
+          <span class="minutes">25</span>
+          <span class="colon">:</span>
+          <span class="seconds">00</span>
+        </div>
+
+        <div class="controls">
+          <button class="start">
+            <img src="./assets/images/dm-play.svg" alt="icone de dar play" />
+          </button>
+
+          <button class="stop">
+            <img src="./assets/images/dm-stop.svg" alt="icone de dar stop" />
+          </button>
+
+          <button class="add-minutes">
+            <img
+              src="./assets/images/dm-add.svg"
+              alt="icone de acrescentar tempo"
+            />
+          </button>
+
+          <button class="decrease-minutes">
+            <img
+              src="./assets/images/dm-decrease.svg"
+              alt="icone de diminuir tempo"
+            />
+          </button>
+        </div>
+      </div>
+
+      <div class="audio-container">
+        <button class="forest">
+          <img src="./assets/images/dm-tree.svg" alt="icone de uma árvore" />
+        </button>
+
+        <button class="rain">
+          <img
+            src="./assets/images/dm-cloud.svg"
+            alt="icone de uma nuvem chovendo"
+          />
+        </button>
+
+        <button class="cafeteria">
+          <img src="./assets/images/dm-shop.svg" alt="icone de uma cafeteria" />
+        </button>
+
+        <button class="fireplace">
+          <img src="./assets/images/dm-fire.svg" alt="icone de um fogo aceso" />
+        </button>
+      </div>
+    </main>
+    <button class="light-mode-button" hidden>
+      <img src="./assets/images/sun.svg" alt="icone de modo claro" />
+    </button>
+    <button class="dark-mode-button">
+      <img src="./assets/images/moon.svg" alt="icone de modo escuro" />
+    </button>
+  </body>
+</html>
