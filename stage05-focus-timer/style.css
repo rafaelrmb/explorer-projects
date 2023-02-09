@@ -1,0 +1,116 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: hsl(var(--bg-color-dark-mode));
+  border: none;
+  cursor: pointer;
+}
+
+/* Variables */
+:root {
+  /* Colors */
+  --bg-color-dark-mode: 240 5% 7%;
+  --bg-color-light-mode: 0 0% 100%;
+
+  --text-color-dark-mode: 0 0% 100%;
+  --text-color-light-mode: 240 6% 21%;
+
+  --button-bg-dark-mode: 240 6% 17%;
+  --button-bg-light-mode: 40 9% 89%;
+
+  --button-bg-active-dark-mode: 195 74% 15%;
+  --button-bg-active-light-mode: 194 97% 31%;
+
+  --fill-filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
+    saturate(7499%) hue-rotate(316deg) brightness(106%) contrast(101%);
+
+  /* Fonts */
+  --ff-primary: "Roboto", sans-serif;
+  --fs-900: clamp(6rem, 10vw, 8rem);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  place-items: center;
+
+  margin: 0 auto;
+  max-width: 80%;
+  height: 100vh;
+  height: 100dvh;
+}
+
+body {
+  background-color: hsl(var(--bg-color-dark-mode));
+  color: hsl(var(--text-color-dark-mode));
+  font-family: var(--ff-primary);
+}
+
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+}
+
+.timer-container div {
+  flex: 1;
+}
+
+.timer-display span {
+  font-size: var(--fs-900);
+  color: hsl(var(--text-color-dark-mode));
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls button:hover,
+.controls button.active {
+  filter: brightness(120%);
+}
+
+.audio-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  place-items: center;
+  gap: 2rem;
+}
+
+.audio-container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: hsl(var(--button-bg-dark-mode));
+  border-radius: 1.5rem;
+
+  max-width: 8.625rem;
+  padding: 3rem;
+}
+
+.audio-container button:hover,
+.audio-container button.active {
+  background-color: hsl(var(--button-bg-active-dark-mode));
+}
+
+.audio-container button.active img {
+  filter: var(--fill-filter);
+}
+
+@media (min-width: 48em) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+  }
+}
