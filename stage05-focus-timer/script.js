@@ -24,15 +24,33 @@ const forestSoundButton = document.querySelector(".audio-container .forest");
 const rainSoundButton = document.querySelector(".audio-container .rain");
 const cafeteriaSoundButton = document.querySelector(".audio-container .cafeteria");
 const fireplaceSoundButton = document.querySelector(".audio-container .fireplace");
+const allAudioButtons = document.querySelectorAll(".audio-container button");
+const forestVolumeSlider = document.querySelector("#forestVolume");
+const rainVolumeSlider = document.querySelector("#rainVolume");
+const cafeteriaVolumeSlider = document.querySelector("#cafeteriaVolume");
+const fireplaceVolumeSlider = document.querySelector("#fireplaceVolume");
 
 /* Timer interval */
 let timerInterval;
 
+/* Light mode buttons */
+const darkModeButton = document.querySelector(".dark-mode-button");
+const lightModeButton = document.querySelector(".light-mode-button");
+
 /* Events*/
+/* Light mode events */
+darkModeButton.addEventListener("click", () => {
+    toggleLightMode();
+});
+
+lightModeButton.addEventListener("click", () => {
+    toggleLightMode();
+});
+
 /* ------------------ Timer events ----------------------------------*/
 timerDisplay.addEventListener("click", () => {
     setDisplayTime();
-})
+});
 
 playButton.addEventListener("click", () => {
     playButton.classList.add("active");
@@ -70,13 +88,29 @@ cafeteriaSoundButton.addEventListener("click", () => {
     checkIfSoundIsActive(cafeteriaSoundButton) ?
         pauseSound(CAFETERIA_SOUND) :
         playSound(CAFETERIA_SOUND);
-})
+});
 
 fireplaceSoundButton.addEventListener("click", () => {
     checkIfSoundIsActive(fireplaceSoundButton) ?
         pauseSound(FIREPLACE_SOUND) :
         playSound(FIREPLACE_SOUND);
+});
+
+forestVolumeSlider.addEventListener("change", () => {
+    changeVolume(FOREST_SOUND, forestVolumeSlider.value);
+});
+
+rainVolumeSlider.addEventListener("change", () => {
+    changeVolume(RAIN_SOUND, rainVolumeSlider.value);
+});
+
+cafeteriaVolumeSlider.addEventListener("change", () => {
+    changeVolume(CAFETERIA_SOUND, cafeteriaVolumeSlider.value);
 })
+
+fireplaceVolumeSlider.addEventListener("change", () => {
+    changeVolume(FIREPLACE_SOUND, fireplaceVolumeSlider.value);
+});
 
 /* Functions */
 /* ------------------ Timer functions ----------------------------------*/
@@ -172,4 +206,20 @@ function checkIfSoundIsActive(element) {
         element.classList.add('active');
         return false;
     }
+}
+
+function changeVolume(sound, volume) {
+    sound.volume = volume;
+}
+
+/* ------------------ Light mode functions ----------------------------------*/
+function toggleLightMode() {
+    document.body.classList.toggle("light-mode");
+
+    darkModeButton.toggleAttribute('hidden');
+    lightModeButton.toggleAttribute('hidden');
+
+    allAudioButtons.forEach(button => {
+        button.classList.toggle("light-mode");
+    });
 }

@@ -9,6 +9,12 @@ button {
   background-color: hsl(var(--bg-color-dark-mode));
   border: none;
   cursor: pointer;
+
+  position: relative;
+}
+
+body.light-mode button {
+  background-color: hsl(var(--bg-color-light-mode));
 }
 
 /* Variables */
@@ -28,6 +34,8 @@ button {
 
   --fill-filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
     saturate(7499%) hue-rotate(316deg) brightness(106%) contrast(101%);
+  --light-mode-filter: brightness(0) saturate(100%) invert(15%) sepia(5%)
+    saturate(999%) hue-rotate(201deg) brightness(99%) contrast(87%);
 
   /* Fonts */
   --ff-primary: "Roboto", sans-serif;
@@ -52,6 +60,11 @@ body {
   font-family: var(--ff-primary);
 }
 
+body.light-mode {
+  background-color: hsl(var(--bg-color-light-mode));
+  color: hsl(var(--text-color-light-mode));
+}
+
 .timer-container {
   display: flex;
   flex-direction: column;
@@ -65,7 +78,6 @@ body {
 
 .timer-display span {
   font-size: var(--fs-900);
-  color: hsl(var(--text-color-dark-mode));
 }
 
 .controls {
@@ -73,8 +85,17 @@ body {
   justify-content: space-between;
 }
 
+body.light-mode .controls button img {
+  filter: var(--light-mode-filter);
+}
+
+.controls button {
+  transition: scale 0.3s ease-in-out;
+}
+
 .controls button:hover,
 .controls button.active {
+  scale: 1.1;
   filter: brightness(120%);
 }
 
@@ -88,14 +109,140 @@ body {
 
 .audio-container button {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 2rem;
 
   background-color: hsl(var(--button-bg-dark-mode));
   border-radius: 1.5rem;
 
   max-width: 8.625rem;
-  padding: 3rem;
+  padding: 1.5rem;
+
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Input styling begin */
+input[type="range"] {
+  height: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  transition: background 1s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: hsl(var(--text-color-dark-mode));
+  border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  border: 1px solid hsl(var(--text-color-dark-mode));
+  height: 16px;
+  width: 16px;
+  border-radius: 50px;
+  background: hsl(var(--text-color-dark-mode));
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -10.5px;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: hsl(var(--text-color-dark-mode));
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: hsl(var(--text-color-dark-mode));
+  border-radius: 5px;
+  border: 1px solid hsl(var(--button-bg-dark-mode));
+}
+
+input[type="range"]::-moz-range-thumb {
+  border: 1px solid hsl(var(--text-color-dark-mode));
+  height: 16px;
+  width: 16px;
+  border-radius: 50px;
+  background: hsl(var(--text-color-dark-mode));
+  cursor: pointer;
+}
+
+button.light-mode.active input[type="range"]::-moz-range-track, 
+button.light-mode.active input[type="range"]::-moz-range-thumb {
+  background: hsl(var(--text-color-dark-mode));
+  border: 1px solid hsl(var(--text-color-dark-mode));
+}
+
+button.light-mode input[type="range"]::-moz-range-track, 
+button.light-mode input[type="range"]::-moz-range-thumb {
+  background: hsl(var(--text-color-light-mode));
+  border: 1px solid hsl(var(--text-color-light-mode));
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type="range"]::-ms-fill-lower {
+  background: hsl(var(--text-color-dark-mode));
+  border: 1px solid hsl(var(--button-bg-dark-mode));
+  border-radius: 10px;
+}
+
+input[type="range"]::-ms-fill-upper {
+  background: hsl(var(--text-color-dark-mode));
+  border: 1px solid hsl(var(--button-bg-dark-mode));
+  border-radius: 10px;
+}
+
+input[type="range"]::-ms-thumb {
+  margin-top: 1px;
+  border: 1px solid hsl(var(--text-color-dark-mode));
+  height: 16px;
+  width: 16px;
+  border-radius: 50px;
+  background: hsl(var(--text-color-dark-mode));
+  cursor: pointer;
+}
+
+input[type="range"]:focus::-ms-fill-lower {
+  background: hsl(var(--text-color-dark-mode));
+}
+
+input[type="range"]:focus::-ms-fill-upper {
+  background: hsl(var(--text-color-dark-mode));
+}
+
+button.light-mode input[type="range"]:focus::-ms-fill-lower {
+  background: hsl(var(--text-color-light-mode));
+}
+
+button.light-mode input[type="range"]:focus::-ms-fill-upper {
+  background: hsl(var(--text-color-light-mode));
+}
+/*Input styling end */
+
+.audio-container button.light-mode {
+  background-color: hsl(var(--button-bg-light-mode));
+}
+
+.audio-container button.light-mode img {
+  filter: var(--light-mode-filter);
+}
+
+.audio-container button.light-mode:hover,
+.audio-container button.light-mode.active {
+  background-color: hsl(var(--button-bg-active-light-mode));
 }
 
 .audio-container button:hover,
@@ -103,8 +250,17 @@ body {
   background-color: hsl(var(--button-bg-active-dark-mode));
 }
 
+.audio-container button.light-mode:hover img,
 .audio-container button.active img {
   filter: var(--fill-filter);
+}
+
+.light-mode-button,
+.dark-mode-button {
+  position: absolute;
+
+  top: 1rem;
+  right: 1.3rem;
 }
 
 @media (min-width: 48em) {
@@ -112,5 +268,12 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     place-items: center;
+  }
+
+  .light-mode-button,
+  .dark-mode-button {
+    position: absolute;
+    top: 3.75rem;
+    right: 3.75rem;
   }
 }
