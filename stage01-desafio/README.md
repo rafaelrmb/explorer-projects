@@ -13,5 +13,8 @@ Here is a list of some skills I was able to learn while completing this project:
 - How to add links to a web page.
 - Positioning an element in the page using the fixed position in CSS.
 
+## Layout
+<img src="https://user-images.githubusercontent.com/71474453/221897237-72e478ba-d20b-4847-b584-8a14536273ed.png" alt="Challenge 1 layout" width="600"/>
+
 ## Deploy 
 You can access the live page [here](https://rafaelrmb.github.io/explorer-projects/stage01-desafio/index.html).
