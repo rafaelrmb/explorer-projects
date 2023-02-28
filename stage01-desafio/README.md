@@ -5,7 +5,7 @@ The first project completed for the Explorer course. It is a simple HTML and CSS
 - HTML
 - CSS
 
-## Skills aquired
+## Skills acquired
 Here is a list of some skills I was able to learn while completing this project:
 - How to add images to web pages, and make sure they contain a descriptive alt attribute for accessibility.
 - How to style single words using the span tag and CSS.
