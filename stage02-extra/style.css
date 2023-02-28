@@ -1,111 +1,126 @@
 /* Reset CSS */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 /* Body Styling */
 body {
-  background: #2c2b3d;
-  color: #fff;
+	background: #2c2b3d;
+	color: #fff;
 
-  font-family: "JetBrains Mono", serif;
-  font-size: 14px;
-  font-weight: 500;
+	font-family: "JetBrains Mono", serif;
+	font-size: 14px;
+	font-weight: 500;
 
-  min-height: 100vh;
+	min-height: 100vh;
 }
 
 .green-accent {
-  color: #00bfa6;
-  font-weight: bold;
+	color: #00bfa6;
+	font-weight: bold;
 }
 
 /* Container Set Up */
 .container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding-top: 4.375rem;
-  padding-inline: 6.1875rem;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding-top: 4.375rem;
+	padding-inline: 2rem;
 }
 
 /* Navigation Styling */
 nav,
 ul {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+@media screen and (max-width: 680px) {
+	nav {
+		flex-direction: column;
+		margin-bottom: 2rem;
+		gap: 1rem;
+	}
 }
 
 nav ul {
-  gap: 4rem;
+	gap: 4rem;
 }
 
 a:hover {
-  cursor: pointer;
-  color: #00bfa6;
+	cursor: pointer;
+	color: #00bfa6;
 }
 
 /* Hero Section Styling */
 main {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 
-  margin-top: 6.25rem;
-  margin-bottom: 9.8125rem;
+	margin-top: 6.25rem;
+	margin-bottom: 9.8125rem;
 
-  text-align: center;
+	text-align: center;
+}
+
+@media (max-width: 860px) {
+	main {
+		flex-direction: column;
+		margin: 0 auto 2rem;
+	}
 }
 
 h1 {
-  font-size: 2.25rem;
-  margin-bottom: 3.75rem;
+	font-size: 2.25rem;
+	margin-bottom: 3.75rem;
 }
 
 .hero-text p {
-  color: #c2c2c2;
+	color: #c2c2c2;
 
-  font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1rem;
 
-  line-height: 1.75rem;
-  max-width: 37.5rem;
+	line-height: 1.75rem;
+	max-width: 37.5rem;
 }
 
 .hero-text p + p {
-  margin-top: 1rem;
+	margin-top: 1rem;
 }
 
 /* Footer Styling */
 footer {
-  text-align: center;
-  padding-bottom: 1.4375rem;
+	text-align: center;
+	padding-bottom: 1.4375rem;
 }
 
 footer::before {
-  content: "";
-  display: block;
+	content: "";
+	display: block;
 
-  height: 0.0625rem;
-  max-width: 35.5rem;
-  margin: 0 auto 1.6875rem;
+	height: 0.0625rem;
+	max-width: 35.5rem;
+	margin: 0 auto 1.6875rem;
 
-  background-color: #00bfa6;
+	background-color: #00bfa6;
 }
 
 /* Decorative Padlock Styling */
 #padlock-decor {
-  position: fixed;
-  left: 1.25rem;
-  bottom: 1.25rem;
+	position: fixed;
+	left: 1.25rem;
+	bottom: 1.25rem;
 }
