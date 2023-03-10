@@ -7,6 +7,7 @@ Each project is located in its own directory, and contains its own README file w
 - HTML
 - CSS
 - Node.js
+- React
 
 ## Projects
 Here's a list with some projects that you can find in this repository:
